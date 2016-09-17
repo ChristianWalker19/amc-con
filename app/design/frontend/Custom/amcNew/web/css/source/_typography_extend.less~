@@ -1,0 +1,140 @@
+.lib-font-face1(
+    @family-name:'truecrimes',
+    @font-path:'@{baseDir}fonts/truecrimes/true-crimes-webfont',
+    @font-weight: normal,
+    @font-style: normal
+) {
+    @font-face {
+        font-family: @family-name;
+        src: url('@{font-path}.eot');
+        src: url('@{font-path}.eot?#iefix') format('embedded-opentype'),
+        url('@{font-path}.woff') format('woff'),
+        url('@{font-path}.ttf') format('truetype'),
+        url('@{font-path}.svg#@{family-name}') format('svg');
+        font-weight: @font-weight;
+        font-style: @font-style;
+    }
+}
+
+.lib-font-face2(
+    @family-name:'lemiesz',
+    @font-path:'@{baseDir}fonts/lemiesz/Lemiesz-webfont',
+    @font-weight: normal,
+    @font-style: normal
+) {
+    @font-face {
+        font-family: @family-name;
+        src: url('@{font-path}.eot');
+        src: url('@{font-path}.eot?#iefix') format('embedded-opentype'),
+        url('@{font-path}.woff') format('woff'),
+        url('@{font-path}.ttf') format('truetype'),
+        url('@{font-path}.svg#@{family-name}') format('svg');
+        font-weight: @font-weight;
+        font-style: @font-style;
+    }
+}
+
+@heading__font-family__base: "truecrimes";
+@heading__font-family2: "lemiesz";
+@heading__font-family3: Arial, sans-serif;
+
+// Sizes
+@h1__font-size: 5rem; /* = 5px */
+@h2__font-size: 3.6rem; /* = 36px */
+@h3__font-size: 2rem; /* = 20px */
+@h4__font-size: 2.4rem; /* = 24px */
+@h5__font-size: 1.6rem; /* = 16px */
+
+//  Weights
+@font-weight__light: 300;
+@font-weight__regular: 400;
+@font-weight__heavier: 500;
+@font-weight__semibold: 600;
+@font-weight__bold: 700;
+
+
+//
+//  Indents
+//  ---------------------------------------------
+
+@indent__base: @line-height__computed; // 20px
+@indent__xl: @indent__base * 2; // 40px
+@indent__l: @indent__base * 1.5; // 30px
+@indent__m: @indent__base * 1.25; // 25px
+@indent__s: @indent__base / 2; // 10px
+@indent__xs: @indent__base / 4; // 5px
+
+
+
+//
+//  Lists
+//  ---------------------------------------------
+
+@list__color__base: false;
+@list__font-size__base: false;
+@list__margin-top: 0;
+@list__margin-bottom: @indent__m;
+
+@list-item__margin-top: 0;
+@list-item__margin-bottom: @indent__s;
+
+@dl__margin-top: 0;
+@dl__margin-bottom: @indent__base;
+
+@dt__margin-top: 0;
+@dt__margin-bottom: @indent__xs;
+@dt__font-weight: @font-weight__bold;
+
+@dd__margin-top: 0;
+@dd__margin-bottom: @indent__s;
+
+//
+//  Paragraphs
+//  ---------------------------------------------
+
+@p__margin-top: 0;
+@p__margin-bottom: @indent__s;
+
+
+
+
+//  Headings
+@h1__font-color: @heading__color__base;
+@h1__font-family: @heading__font-family__base;
+@h1__font-weight: @heading__font-weight__base;
+@h1__font-style: @heading__font-style__base;
+@h1__line-height: @heading__line-height__base;
+@h1__margin-top: 0;
+@h1__margin-bottom: @heading__margin-bottom__base;
+
+@h2__font-color: @heading2__color__base;
+@h2__font-family: @heading__font-family__base;
+@h2__font-weight: @heading__font-weight__base;
+@h2__font-style: @heading__font-style__base;
+@h2__line-height: @heading__line-height__base;
+@h2__margin-top: @indent__m;
+@h2__margin-bottom: @heading__margin-bottom__base;
+
+@h3__font-color: @heading__color__base;
+@h3__font-family: @heading__font-family__base;
+@h3__font-weight: @heading__font-weight__base;
+@h3__font-style: @heading__font-style__base;
+@h3__line-height: @heading__line-height__base;
+@h3__margin-top: @indent__base * .75;
+@h3__margin-bottom: @indent__s;
+
+@h4__font-color: @heading__color__base;
+@h4__font-family: @heading__font-family3;
+@h4__font-weight: @font-weight__bold;
+@h4__font-style: @heading__font-style__base;
+@h4__line-height: @heading__line-height__base;
+@h4__margin-top: @heading__margin-top__base;
+@h4__margin-bottom: @heading__margin-bottom__base;
+
+@h5__font-color: @heading__color__base;
+@h5__font-family: @heading__font-family__base;
+@h5__font-weight: @font-weight__bold;
+@h5__font-style: @heading__font-style__base;
+@h5__line-height: @heading__line-height__base;
+@h5__margin-top: @heading__margin-top__base;
+@h5__margin-bottom: @heading__margin-bottom__base;

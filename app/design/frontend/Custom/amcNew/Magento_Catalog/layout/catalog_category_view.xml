@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+		<referenceContainer name="page.top">
+			<container name="category.banner.container" label="Category Banner Container" htmlTag="div" htmlClass="category-banner-container">
+	        <block class="Magento\Catalog\Block\Category\View" name="category_banner" template="Magento_Catalog::category/category-banner.phtml" after="navigation.sections" />
+			</container>
+        </referenceContainer>
+        <move element="breadcrumbs" destination="category.banner.container" as="breadcrumbs" after="-" />
+
+	    <referenceBlock name="category.image" remove="true" />
+	    
+	    <referenceBlock name="category.description">
+		    <block class="Magento\Catalog\Block\Product\ProductList\Toolbar" name="product_list_toolbar" template="Magento_Catalog::product/list/toolbar.phtml" />
+	    </referenceBlock>
+		<move element="product_list_toolbar" destination="category.description" as="product_list_toolbar" after="-" />
+		
+<!-- 		<move element="page.main.title" destination="content.top" as="page.main.title" before="-" /> -->
+        <referenceContainer name="page.bottom.container">
+			<container name="page.bottom">
+				<block class="Magento\Contact\Block\ContactForm" name="contactForm" template="Magento_Contact::form.phtml">
+                	<container name="form.additional.info" label="Form Additional Info"/>
+            	</block>
+			</container>	        
+        </referenceContainer>
+    </body>
+</page>

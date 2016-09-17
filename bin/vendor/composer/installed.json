@@ -1,0 +1,26 @@
+[
+    {
+        "name": "snowdog/frontools",
+        "version": "0.11.3",
+        "version_normalized": "0.11.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/SnowdogApps/magento2-frontools.git",
+            "reference": "173b8969e461625ecb23cbe10c4fdc86964fcbcd"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/SnowdogApps/magento2-frontools/zipball/173b8969e461625ecb23cbe10c4fdc86964fcbcd",
+            "reference": "173b8969e461625ecb23cbe10c4fdc86964fcbcd",
+            "shasum": ""
+        },
+        "time": "2016-08-17 12:20:04",
+        "type": "magento2-component",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Set of front-end tools for Magento 2, based on Gulp.js"
+    }
+]

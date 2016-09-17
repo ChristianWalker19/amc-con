@@ -1,0 +1,47 @@
+<?php //if($block->getData('category_ids')): ?>
+
+<?php
+
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+
+$category = $objectManager->get('Magento\Framework\Registry')->registry('current_category');
+
+$categories = $category->getCollection()
+            ->addAttributeToSelect(array('url_key','name','image','all_children','is_anchor','bucket_text','description','thumbnail'))
+			->addAttributeToFilter('is_active', 1)
+            ->setOrder('position', 'ASC')
+            ->addIdFilter($category->getChildren())
+			->joinUrlRewrite();
+
+/*
+foreach ($categories as $category){
+     echo 'Name  =  '.$category->getName().'<br>';
+}  
+*/
+
+?>
+<div class="buckets-wrapper">
+	<div class="buckets">
+<?php foreach ($categories as $category):?>
+		
+		<a class="bucket" href="<?php echo $category->getURL() ?>">
+		    <div class="bucket-image">
+			    <?php if($category->getThumbnail()): ?>
+	        	<img src="<?php echo '/pub/media/catalog/category/'.$category->getThumbnail(); ?>" alt="<?php echo $category->getName()?>">
+			    
+			    <?php else: ?>
+	        	<img src="<?php echo $block->getViewFileUrl('images/bronze.png'); ?>" alt="<?php echo $category->getName()?>">
+
+			    <?php endif;?>
+	        	
+		    </div>
+		    <div class="bucket-title">
+		    	<span><?php echo $category->getName();?></span>
+		    </div>
+		    
+	    </a>
+		
+<?php endforeach; ?>
+	</div>
+</div>
+<?php //endif; ?>

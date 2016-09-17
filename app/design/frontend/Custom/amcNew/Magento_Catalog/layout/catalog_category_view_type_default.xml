@@ -1,0 +1,28 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+		<referenceBlock name="category.image" remove="true" />
+        <referenceBlock name="catalog.leftnav" remove="true" />
+        <referenceBlock name="page.main.title" remove="true" />
+
+
+		<referenceContainer name="page.top">
+			<container name="category.banner.container" label="Category Banner Container" htmlTag="div" htmlClass="category-banner-container">
+	        <block class="Magento\Catalog\Block\Category\View" name="category_banner" template="Magento_Catalog::category/category-banner.phtml" after="navigation.sections" />
+			</container>
+        </referenceContainer>
+        <move element="breadcrumbs" destination="category.banner.container" as="breadcrumbs" after="-" />
+		
+		<referenceContainer name="content">
+			<block class="Magento\Catalog\Block\Category\View" name="standard_buckets" template="Magento_Catalog::navigation/standard-buckets.phtml" after="-" />
+        </referenceContainer>
+   
+        
+        <referenceContainer name="page.bottom.container">
+			<container name="page.bottom">
+				<block class="Magento\Contact\Block\ContactForm" name="contactForm" template="Magento_Contact::form.phtml">
+                	<container name="form.additional.info" label="Form Additional Info"/>
+            	</block>
+			</container>	        
+        </referenceContainer>
+    </body>
+</page>

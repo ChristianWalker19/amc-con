@@ -1,0 +1,428 @@
+@import '_variables_extend.less';
+@import '_navigation_extend.less';
+@import '_buckets.less';
+@import '../fontawesome/font-awesome.less';
+
+.lib-font-face1();
+.lib-font-face2();
+
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+
+	i.fa{
+		&:before{
+			.fa-icon();
+		}
+	}
+	
+	a.button1{
+		.button-primary__action();
+	}
+	a.button2{
+		.button-secondary__action();
+	}
+	.action.primary, .action.more{
+		.button-cart__action();
+	}
+	
+	.catalog-category-view{
+		.nav-sections{
+			margin-bottom: 0;
+		}
+	}
+	
+	
+	.checkout-container{
+		margin: 20px 0;
+	}
+	
+	
+	
+	
+	// Forms
+	
+	.form{
+		&.contact{
+			position: relative;
+			z-index: 1;
+			max-width: 800px;
+			margin: auto;
+		}
+	}
+	
+// /**
+//  * Copyright © 2016 Magento. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  AMC-New's new theme variables
+//  _____________________________________________
+
+
+
+
+// Colors
+@color-red1: #d0021b;
+@color-yellow: #fff037;
+@color-grey:#4a4a4a;
+@color-green:#417505;
+
+
+@primary-color: @color-red1;
+@secondary-color: @color-yellow;
+@tertiary-color: @color-grey;
+@accent-color: @color-green;
+@base-color: @color-black;
+
+
+// Typography
+
+
+//  Font families
+@font-family__arial: Arial,Helvetica, sans-serif;
+
+@font-family__base: @font-family__arial;
+
+.lib-font-face1(
+    @family-name:'truecrimes',
+    @font-path:'@{baseDir}fonts/truecrimes/true-crimes-webfont',
+    @font-weight: normal,
+    @font-style: normal
+) {
+    @font-face {
+        font-family: @family-name;
+        src: url('@{font-path}.eot');
+        src: url('@{font-path}.eot?#iefix') format('embedded-opentype'),
+        url('@{font-path}.woff') format('woff'),
+        url('@{font-path}.ttf') format('truetype'),
+        url('@{font-path}.svg#@{family-name}') format('svg');
+        font-weight: @font-weight;
+        font-style: @font-style;
+    }
+}
+
+.lib-font-face2(
+    @family-name:'lemiesz',
+    @font-path:'@{baseDir}fonts/lemiesz/Lemiesz-webfont',
+    @font-weight: normal,
+    @font-style: normal
+) {
+    @font-face {
+        font-family: @family-name;
+        src: url('@{font-path}.eot');
+        src: url('@{font-path}.eot?#iefix') format('embedded-opentype'),
+        url('@{font-path}.woff') format('woff'),
+        url('@{font-path}.ttf') format('truetype'),
+        url('@{font-path}.svg#@{family-name}') format('svg');
+        font-weight: @font-weight;
+        font-style: @font-style;
+    }
+}
+
+.lib-font-face3(
+    @family-name:'FontAwesome',
+    @font-path:'@{baseDir}fonts/fontawesome/fontawesome-webfont',
+    @font-weight: normal,
+    @font-style: normal
+) {
+    @font-face {
+        font-family: @family-name;
+        src: url('@{font-path}.eot');
+        src: url('@{font-path}.eot?#iefix') format('embedded-opentype'),
+        url('@{font-path}.woff') format('woff'),
+        url('@{font-path}.ttf') format('truetype'),
+        url('@{font-path}.svg#@{family-name}') format('svg');
+        font-weight: @font-weight;
+        font-style: @font-style;
+    }
+}
+
+
+//  Responsive variables
+//  _____________________________________________
+
+@use-flex: true; // Use flexbox [true|false]
+@responsive: true; // Theme is responsive [true|false]
+
+@screen__xxs: 320px;
+@screen__xs: 480px;
+@screen__s: 640px;
+@screen__m: 1040px;
+@screen__l: 1040px;
+@screen__xl: 1440px;
+
+.hide(){
+	display: none;
+}
+.show(){
+	display: block;
+}
+
+
+// Buttons
+@button-primary__background: @color-red1;
+@button-primary__border: 1px solid @color-red1;
+@button-primary__color: @color-white;
+@button-primary__gradient-color-start: false;
+@button-primary__gradient-color-end: false;
+
+@button-primary__hover__background: @color-blue2;
+@button-primary__hover__border: 1px solid @color-blue2;
+@button-primary__hover__color: @button-primary__color;
+
+@button-primary__active__background: @button-primary__hover__background;
+@button-primary__active__border: @button-primary__hover__border;
+@button-primary__active__color: @button-primary__color;
+
+
+@button-border-radius:40px;
+@button__font-size__m:17px;
+@button-padding:7px 30px;
+
+@button__font-family__base: "truecrimes";
+
+.button-primary__action(){
+	background-color: @primary-color;
+	color: @color-white;
+	border-radius: @button-border-radius;
+	font-family:@button__font-family__base ;
+	font-size: @button__font-size__m;
+	text-transform: uppercase;
+	display: block;
+	padding: @button-padding;
+}
+.button-secondary__action(){
+	background-color: transparent;
+	color: @color-white;
+	border-radius: @button-border-radius;
+	font-family:@button__font-family__base ;
+	font-size: @button__font-size__m;
+	border:2px solid;
+	text-transform: uppercase;
+	display: block;
+	padding: @button-padding;
+}
+
+.button-cart__action(){
+	background-color: @accent-color;
+	color: @color-white;
+	border-radius: @button-border-radius;
+	font-family:@button__font-family__base ;
+	font-size: @button__font-size__m;
+	border:2px solid;
+	text-transform: uppercase;
+	display: block;
+	padding: @button-padding;
+}
+
+
+
+//  Layout variables
+//  _____________________________________________
+
+//  Widths
+@layout__width: ''; // for the fixed width layout
+@layout__max-width: 1310px;
+@layout-indent__width: 20px;
+@layout__width-xs-indent: 15px;
+
+//  Classnames defining different layouts
+@layout-class-1column: page-layout-1column;
+@layout-class-2columns__left: page-layout-2columns-left;
+@layout-class-2columns__right: page-layout-2columns-right;
+@layout-class-3columns: page-layout-3columns;
+
+//  Variables used for layout grid
+@total-columns: 12;
+@gutter-width: 0;
+
+//  Variables for layout columns
+@layout-column__width: @total-columns;
+@layout-column__sidebar-width: 3;
+@layout-column__left-width: @layout-column__sidebar-width;
+@layout-column__right-width: @layout-column__sidebar-width;
+
+//  Variables for layout columns depending on layout used
+@layout-column-main__width-1: 100%;
+@layout-column-main__width-2-left: @layout-column__width - @layout-column__left-width;
+@layout-column-main__width-2-right: @layout-column__width - @layout-column__right-width;
+@layout-column-main__width-3: @layout-column__width - @layout-column__left-width - @layout-column__right-width;
+
+//  Checkout columns width
+@layout-column-checkout__width-left: 3;
+@layout-column-checkout__width-main: @layout-column__width - @layout-column-checkout__width-left;
+
+
+@layout-column-main__sidebar-offset: 2%;
+@layout-column__additional-sidebar-offset: @layout-column-main__sidebar-offset;
+
+
+
+
+// Font colors
+@heading__color__base: @color-black;
+@heading2__color__base: @color-red1;
+
+@heading__font-family__base: "truecrimes";
+@heading__font-family2: "lemiesz";
+@heading__font-family3: Arial, sans-serif;
+
+// Sizes
+@h1__font-size: 5rem; /* = 50px */
+@h2__font-size: 3.6rem; /* = 36px */
+@h3__font-size: 2rem; /* = 20px */
+@h4__font-size: 2.4rem; /* = 24px */
+@h5__font-size: 1.6rem; /* = 16px */
+
+//  Weights
+@font-weight__light: 300;
+@font-weight__regular: 400;
+@font-weight__heavier: 500;
+@font-weight__semibold: 600;
+@font-weight__bold: 700;
+
+
+//
+//  Indents
+//  ---------------------------------------------
+
+@indent__base: @line-height__computed; // 20px
+@indent__xl: @indent__base * 2; // 40px
+@indent__l: @indent__base * 1.5; // 30px
+@indent__m: @indent__base * 1.25; // 25px
+@indent__s: @indent__base / 2; // 10px
+@indent__xs: @indent__base / 4; // 5px
+
+
+
+//
+//  Lists
+//  ---------------------------------------------
+
+@list__color__base: false;
+@list__font-size__base: false;
+@list__margin-top: 0;
+@list__margin-bottom: @indent__m;
+
+@list-item__margin-top: 0;
+@list-item__margin-bottom: @indent__s;
+
+@dl__margin-top: 0;
+@dl__margin-bottom: @indent__base;
+
+@dt__margin-top: 0;
+@dt__margin-bottom: @indent__xs;
+@dt__font-weight: @font-weight__bold;
+
+@dd__margin-top: 0;
+@dd__margin-bottom: @indent__s;
+
+//
+//  Paragraphs
+//  ---------------------------------------------
+
+@p__margin-top: 0;
+@p__margin-bottom: @indent__s;
+
+
+
+
+//  Headings
+@h1__font-color: @heading__color__base;
+@h1__font-family: @heading__font-family__base;
+@h1__font-weight: @heading__font-weight__base;
+@h1__font-style: @heading__font-style__base;
+@h1__line-height: @heading__line-height__base;
+@h1__margin-top: 0;
+@h1__margin-bottom: @heading__margin-bottom__base;
+
+@h2__font-color: @heading2__color__base;
+@h2__font-family: @heading__font-family__base;
+@h2__font-weight: @heading__font-weight__base;
+@h2__font-style: @heading__font-style__base;
+@h2__line-height: @heading__line-height__base;
+@h2__margin-top: @indent__m;
+@h2__margin-bottom: @heading__margin-bottom__base;
+
+@h3__font-color: @heading__color__base;
+@h3__font-family: @heading__font-family__base;
+@h3__font-weight: @heading__font-weight__base;
+@h3__font-style: @heading__font-style__base;
+@h3__line-height: @heading__line-height__base;
+@h3__margin-top: @indent__base * .75;
+@h3__margin-bottom: @indent__s;
+
+@h4__font-color: @heading__color__base;
+@h4__font-family: @heading__font-family3;
+@h4__font-weight: @font-weight__bold;
+@h4__font-style: @heading__font-style__base;
+@h4__line-height: @heading__line-height__base;
+@h4__margin-top: @heading__margin-top__base;
+@h4__margin-bottom: @heading__margin-bottom__base;
+
+@h5__font-color: @heading__color__base;
+@h5__font-family: @heading__font-family__base;
+@h5__font-weight: @font-weight__bold;
+@h5__font-style: @heading__font-style__base;
+@h5__line-height: @heading__line-height__base;
+@h5__margin-top: @heading__margin-top__base;
+@h5__margin-bottom: @heading__margin-bottom__base;
+
+
+
+.page-main{
+	
+	.page-title-wrapper{
+		h1{
+			font-size:@h1__font-size;
+			color: @heading__color__base;
+			font-family: @heading__font-family__base;
+		}
+		h2{
+			font-size:@h2__font-size;
+			color: @heading__color__base;
+			font-family: @heading__font-family__base;
+		}
+		h3{
+			font-size:@h3__font-size;
+			font-family: @heading__font-family__base;
+		}
+	}
+}
+
+
+	
+
+
+
+
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__l) {
+ 	
+ 	
+ 	
+
+ 
+ }
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+	
+	
+	
+	
+}

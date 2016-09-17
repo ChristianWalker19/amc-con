@@ -1,0 +1,22 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<div class="footer-content">
+		<div class="footer-container-top">
+			<div class="footer-top">
+			    <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer_social_top')->toHtml();?>
+			</div>     
+		</div>
+		
+		<div class="footer-container-links">
+			<div class="footer-links-content">
+				<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer_links')->toHtml();?>  
+			</div>     
+		</div>
+</div>

@@ -1,0 +1,5 @@
+{
+    "require": {
+        "snowdog/frontools": "^0.11.3"
+    }
+}

@@ -1,0 +1,29 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+	     <referenceContainer name="header-wrapper">
+	        <block class="Magento\Framework\View\Element\Template" name="utility.navigation" as="utilityNavigation" template="Magento_Theme::html/utility_navigation.phtml" />
+        </referenceContainer>
+		<referenceContainer name="header.panel.wrapper" remove="true" />
+		<referenceBlock name="store.menu">
+			<referenceBlock name="catalog.topnav" remove="true" />
+			<block class="Magento\Theme\Block\Html\Topmenu" name="catalog.topnavnew" template="html/topmenu.phtml" before="-"/>
+		</referenceBlock>
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_file" xsi:type="string">images/logo.png</argument>
+<!--
+                <argument name="logo_img_width" xsi:type="number">300</argument> 
+                <argument name="logo_img_height" xsi:type="number">300</argument>
+-->
+            </arguments>
+        </referenceBlock>
+        <referenceBlock name="footer_links" remove="true" />
+        <referenceBlock name="store_switcher" remove="true" />
+        <referenceBlock name="form.subscribe" remove="true" />
+        <referenceBlock name="copyright" remove="true" />
+        <referenceBlock name="report.bugs" remove="true" />
+        <referenceContainer name="footer">
+	        <block class="Magento\Framework\View\Element\Template" name="footer.container" as="footerContainer" template="Magento_Theme::html/footer.phtml" />
+        </referenceContainer>
+    </body>
+</page>

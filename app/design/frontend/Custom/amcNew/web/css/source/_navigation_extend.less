@@ -1,0 +1,126 @@
+// /**
+//  * Copyright © 2016 Magento. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+
+.lib-font-face1();
+.lib-font-face2();
+
+//
+//  Variables
+//  _____________________________________________
+
+@active-nav-indent: 54px;
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+ 
+ 
+ }
+ 
+ //
+//  Tablet
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+
+ 
+}
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+    
+    
+	// My Styles
+	
+	.nav-sections-item-content{
+		
+		position: relative;
+
+			&:before{
+				content: "";
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 100%;
+				background: fadeout(@color-black, 50%);
+				z-index: 1;
+			}
+
+		
+		
+		> .navigation{
+			max-width: 100%;
+			width: 100%;
+			background:none;
+			
+			
+			> ul{
+				max-width: @layout__max-width;
+				margin: auto;
+				position: relative;
+				z-index: 1;
+				
+				li{
+					margin-right: 20px;
+					
+					a{
+						font-family: "truecrimes";
+						text-transform: uppercase;
+						display: block;
+						font-size: 18px;
+						
+						span{
+							color: @color-white;
+							letter-spacing: 1px;
+							
+						}
+					}
+					
+					ul.level0{
+						
+							background: @color-red1;
+							border: none;
+						
+						&.submenu{
+							
+						}
+						
+						li{
+							margin: 0;
+							width: 100%;
+							
+							a{
+								&:hover{
+									
+									span{
+										color: @color-black;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+    
+}
